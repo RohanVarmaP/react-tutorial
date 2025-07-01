@@ -4,12 +4,14 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './Header'
 import MainPage from './MainPage'
+import PageFooter from './PageFooter'
 
 function App() {
   return (
     <>
       <Header />
       <MainPage />
+      <PageFooter />
     </>
   )
 }
