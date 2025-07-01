@@ -4,13 +4,13 @@ export default function MainPage() {
     return (
         <main>
             <h1>Fun facts about react</h1>
-            <ol>
-                <li>React is the most popular library.</li>
-                <li>It helps in creases chances for getting jobs</li>
-                <li>React is created and released on 2013</li>
-                <li>Created by johe</li>
-                <li>mainted by meta</li>
-            </ol>
+            <ul className="facts-list">
+                <li>was created in 2013.</li>
+                <li>was originally created by jorden walke.</li>
+                <li>has well over 200K stars in Github</li>
+                <li>is maintained by Meta</li>
+                <li>Powers thousands of enterprise apps, includeing mobile apps.</li>
+            </ul>
         </main>
     )
 }
