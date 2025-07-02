@@ -45,6 +45,7 @@ main {
 
 .journal-entry {
   display: flex;
+  margin-bottom: 30px;
 }
 
 .image-container {
