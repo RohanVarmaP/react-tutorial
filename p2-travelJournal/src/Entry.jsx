@@ -6,7 +6,7 @@ const Entry = (props) => {
     return (
         <article className='journal-entry'>
             <div className='image-container'>
-                <img src={props.img} alt={props.location} />
+                <img src={props.img.src} alt={props.img.alt} />
             </div>
             <div>
                 <img className='Marker-png' src="/src/assets/Marker.png" alt="Markar icon" />
