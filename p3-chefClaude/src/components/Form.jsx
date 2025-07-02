@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const ingredients = ['chilli', 'pepper', 'oregano', 'chicken', 'tamato']
 
 const ingredientsListItems = ingredients.map((ingredient) => <li key={ingredient}>{ingredient}</li>)
