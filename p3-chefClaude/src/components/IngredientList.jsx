@@ -1,16 +1,18 @@
 import React from 'react'
 const ingredients = ['chilli', 'pepper', 'oregano', 'chicken', 'tamato']
 
-function RenderIngredients(ingredients) {
+function RenderIngredients(props) {
+    const ingredients = props.ingredients
     return ingredients.map(value => <li key={value}>{value}</li>)
 }
 
-const IngredientList = () => {
+const IngredientList = (props) => {
+    console.log(props.ingredients)
     return (
         <div className='ingredent-list'>
             <h2>Ingredients on hand:</h2>
             <ul>
-                <RenderIngredients ingredients={ingredients} />
+                <RenderIngredients ingredients={props.ingredients} />
             </ul>
         </div>
     )

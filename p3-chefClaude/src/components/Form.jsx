@@ -1,14 +1,16 @@
 import React from 'react'
 
 
-const Form = () => {
+const Form = (addIngredient) => {
+    function addingIngredient(ingredient) {
+        const ingredientData = FormData.get('ingredient')
+        ingredientData ? addIngredient(ingredient) : console.log('Enter a value to add ingredient.')
+    }
     return (
-        <>
-            <form action={addIngredient} /*onSubmit={handleSubmit}*/ className='add-ingredient'>
-                <input type="text" placeholder='e.g. oregano' aria-label='Add ingredient' name='ingredient' />
-                <button>+ Add ingredient</button>
-            </form>
-        </>
+        <form action={addingIngredient} /*onSubmit={handleSubmit}*/ className='add-ingredient'>
+            <input type="text" placeholder='e.g. oregano' aria-label='Add ingredient' name='ingredient' />
+            <button>+ Add ingredient</button>
+        </form>
     )
 }
 
