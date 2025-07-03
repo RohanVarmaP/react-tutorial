@@ -1,6 +1,6 @@
 import React from "react"
 
-export function ReadyForRecipe() {
+export default function ReadyForRecipe() {
     return (
         <section className='ready-for-recipe'>
             <div className='get-recipe-div'>
