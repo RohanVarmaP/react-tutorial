@@ -2,13 +2,7 @@ import React from 'react'
 const ingredients = ['chilli', 'pepper', 'oregano', 'chicken', 'tamato']
 
 function RenderIngredients(ingredients) {
-    ingredients = ingredients.ingredients;
-    console.log(ingredients);
-    const ingList = ingredients.map((ingredient) => {
-        return <li key={ingredient}>{ingredient}</li>
-    });
-    console.log(ingList);
-    return ingList
+    return ingredients.map(value => <li key={value}>{value}</li>)
 }
 
 const IngredientList = () => {
