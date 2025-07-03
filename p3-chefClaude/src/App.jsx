@@ -11,7 +11,7 @@ import Recipe from './components/Recipe'
 function App() {
   const [ingredients, setIngredients] = React.useState(['chilli', 'pepper', 'oregano', 'chicken', 'tamato'])
 
-  const [recipiShown, setRecipeShown] = React.useState(false)
+  const [recipeShown, setRecipeShown] = React.useState(false)
 
   function addIngredient(ingredientData) {
     console.log("in app")
@@ -32,7 +32,7 @@ function App() {
         <Form addIngredient={addIngredient} />
         {ingredients.length ? <IngredientList ingredients={ingredients} /> : null}
         {ingredients.length > 4 ? <ReadyForRecipe getRecipe={getRecipe} /> : null}
-        {recipiShown ? <Recipe /> : null}
+        {recipeShown ? <Recipe /> : null}
       </main>
     </>
   )
