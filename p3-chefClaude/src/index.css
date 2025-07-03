@@ -82,6 +82,7 @@ header>h1 {
   border: none;
   min-width: 160px;
   max-width: 300px;
+  cursor: pointer;
 }
 
 .ingredent-list {
@@ -124,6 +125,7 @@ header>h1 {
   font-size: 14px;
   font-weight: 500px;
   line-height: 20px;
+  cursor: pointer;
 }
 
 .get-recipe-div>p {
