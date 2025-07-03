@@ -27,7 +27,9 @@ function App() {
       <Header />
       <main>
         <Form />
-        {/* <IngredientList /> */}
+        {ingredients.length ? <IngredientsList /> : null}
+        {ingredients.length > 4 ? <ReadyForRecipe /> : null}
+        {recipiShown ? <Recipe /> : null}
       </main>
     </>
   )
