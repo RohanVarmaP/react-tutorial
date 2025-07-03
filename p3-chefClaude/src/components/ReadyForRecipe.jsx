@@ -1,6 +1,9 @@
 import React from "react"
 
-export default function ReadyForRecipe() {
+export default function ReadyForRecipe(getRecipe) {
+    function gettingRecipe() {
+        getRecipe()
+    }
     return (
         <section className='ready-for-recipe'>
             <div className='get-recipe-div'>
@@ -8,7 +11,7 @@ export default function ReadyForRecipe() {
                 <p>generate a recipe from your list of ingredients</p>
             </div>
             <div>
-                <button onClick={GetRecipe} className='get-recipe'>Get a recipe</button>
+                <button onClick={gettingRecipe} className='get-recipe'>Get a recipe</button>
             </div>
         </section>)
 }

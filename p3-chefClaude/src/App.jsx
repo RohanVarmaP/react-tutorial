@@ -29,7 +29,7 @@ function App() {
       <main>
         <Form addIngredient={addIngredient} />
         {ingredients.length ? <IngredientList ingredients={ingredients} /> : null}
-        {ingredients.length > 4 ? <ReadyForRecipe /> : null}
+        {ingredients.length > 4 ? <ReadyForRecipe getRecipe={getRecipe} /> : null}
         {recipiShown ? <Recipe /> : null}
       </main>
     </>
