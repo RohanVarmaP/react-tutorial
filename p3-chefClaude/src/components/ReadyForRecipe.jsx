@@ -1,8 +1,8 @@
 import React from "react"
 
-export default function ReadyForRecipe(getRecipe) {
+export default function ReadyForRecipe(props) {
     function gettingRecipe() {
-        getRecipe()
+        props.getRecipe()
     }
     return (
         <section className='ready-for-recipe'>

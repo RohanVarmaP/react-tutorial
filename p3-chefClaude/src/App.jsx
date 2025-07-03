@@ -13,8 +13,10 @@ function App() {
 
   const [recipiShown, setRecipeShown] = React.useState(false)
 
-  function addIngredient(FormData) {
-    ingredientData ? setIngredients(prevList => [...prevList, ingredientData]) : console.log('Enter a value to add ingredient.')
+  function addIngredient(ingredientData) {
+    console.log("in app")
+    console.log(ingredientData)
+    setIngredients(prevList => [...prevList, ingredientData])
 
   }
 

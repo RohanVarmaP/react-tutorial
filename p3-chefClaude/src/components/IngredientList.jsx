@@ -7,7 +7,6 @@ function RenderIngredients(props) {
 }
 
 const IngredientList = (props) => {
-    console.log(props.ingredients)
     return (
         <div className='ingredent-list'>
             <h2>Ingredients on hand:</h2>

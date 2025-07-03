@@ -1,10 +1,12 @@
 import React from 'react'
 
 
-const Form = (addIngredient) => {
+const Form = (props) => {
     function addingIngredient(ingredient) {
-        const ingredientData = FormData.get('ingredient')
-        ingredientData ? addIngredient(ingredient) : console.log('Enter a value to add ingredient.')
+        const ingredientData = ingredient.get('ingredient')
+        console.log("in form")
+        console.log(ingredientData)
+        ingredientData ? props.addIngredient(ingredientData) : console.log('Enter a value to add ingredient.')
     }
     return (
         <form action={addingIngredient} /*onSubmit={handleSubmit}*/ className='add-ingredient'>
