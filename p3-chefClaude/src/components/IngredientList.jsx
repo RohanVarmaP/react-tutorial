@@ -1,4 +1,4 @@
-import React from 'react'
+
 const ingredients = ['chilli', 'pepper', 'oregano', 'chicken', 'tamato']
 
 function RenderIngredients(props) {
