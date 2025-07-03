@@ -53,9 +53,10 @@ header>h1 {
 
 .add-ingredient {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
-  width: 80%;
+  width: 90%;
+  max-width: 594px;
 }
 
 .add-ingredient>input {
@@ -68,6 +69,7 @@ header>h1 {
   max-width: 400px;
   font-family: Inter;
   font-size: 15px;
+  padding: 10px;
 }
 
 .add-ingredient>button {
@@ -78,6 +80,61 @@ header>h1 {
   height: 40px;
   border-radius: 6px;
   border: none;
-  min-width: 150px;
+  min-width: 160px;
   max-width: 300px;
+}
+
+.ingredent-list {
+  height: 400px;
+  width: 90%;
+  max-width: 594px;
+}
+
+.ingredent-list>h2 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.ingredent-list>ul {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #475467;
+}
+
+.ready-for-recipe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 90%;
+  max-width: 594px;
+  border-radius: 10px;
+  height: 109px;
+  background-color: #F0EFEB;
+}
+
+.get-recipe {
+  background-color: #D17557;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 17px;
+  font-size: 14px;
+  font-weight: 500px;
+  line-height: 20px;
+}
+
+.get-recipe-div>p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6B7280;
+}
+
+.get-recipe-div>h2 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
 }

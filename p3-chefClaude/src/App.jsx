@@ -7,6 +7,20 @@ import Form from './components/Form'
 import IngredientList from './components/IngredientList'
 
 function App() {
+  const [ingredients, setIngredients] = React.useState(['chilli', 'pepper', 'oregano', 'chicken', 'tamato'])
+
+  const [recipiShown, setRecipeShown] = React.useState(false)
+
+  function addIngredient(FormData) {
+    const ingredientData = FormData.get('ingredient')
+    ingredientData ? setIngredients(prevList => [...prevList, ingredientData]) : console.log('Enter a value to add ingredient.')
+
+  }
+
+  function getRecipe() {
+    setRecipeShown(prevvalue => !prevvalue)
+  }
+
 
   return (
     <>
