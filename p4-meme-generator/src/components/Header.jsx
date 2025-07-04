@@ -1,11 +1,13 @@
-import React from 'react'
+import logo from "../logo.svg"
 
-const Header = () => {
+export default function Header() {
     return (
-        <div>
-
-        </div>
+        <header className="header">
+            <img
+                src={logo}
+                alt="logo"
+            />
+            <h1>Meme Generator</h1>
+        </header>
     )
 }
-
-export default Header
