@@ -1,8 +1,6 @@
 
 export default function ReadyForRecipe(props) {
-    function gettingRecipe() {
-        props.getRecipe()
-    }
+
     return (
         <section className='ready-for-recipe'>
             <div className='get-recipe-div'>
@@ -10,7 +8,7 @@ export default function ReadyForRecipe(props) {
                 <p>generate a recipe from your list of ingredients</p>
             </div>
             <div>
-                <button onClick={gettingRecipe} className='get-recipe'>Get a recipe</button>
+                <button onClick={props.getRecipe} className='get-recipe'>Get a recipe</button>
             </div>
         </section>)
 }
