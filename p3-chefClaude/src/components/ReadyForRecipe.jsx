@@ -1,8 +1,9 @@
 
 export default function ReadyForRecipe(props) {
+    console.log(props)
 
     return (
-        <section className='ready-for-recipe'>
+        <section ref={props.refs} className='ready-for-recipe'>
             <div className='get-recipe-div'>
                 <h2>Ready for a recipe</h2>
                 <p>generate a recipe from your list of ingredients</p>

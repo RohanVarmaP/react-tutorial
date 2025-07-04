@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -14,19 +14,23 @@ function App() {
 
   const [recipe, setRecipe] = React.useState()
 
+  const recipeSection = React.useRef(null)
+
   function addIngredient(ingredientData) {
-    console.log("in app")
-    console.log(ingredientData)
     setIngredients(prevList => [...prevList, ingredientData])
 
   }
 
   async function getRecipe() {
     const newrecipe = await getRecipeFromMistral(ingredients)
-    console.log(newrecipe)
     setRecipe(newrecipe)
   }
 
+  React.useEffect(() => {
+    if (recipe !== '' && recipeSection.current !== null) {
+      recipeSection.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [recipe])
 
   return (
     <>
@@ -34,7 +38,7 @@ function App() {
       <main>
         <Form addIngredient={addIngredient} />
         {ingredients.length ? <IngredientList ingredients={ingredients} /> : null}
-        {ingredients.length > 4 ? <ReadyForRecipe getRecipe={getRecipe} /> : null}
+        {ingredients.length > 4 ? <ReadyForRecipe getRecipe={getRecipe} refs={recipeSection} /> : null}
         {recipe ? <Recipe recipe={recipe} /> : null}
       </main>
     </>

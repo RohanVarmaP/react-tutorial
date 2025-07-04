@@ -2,8 +2,6 @@
 const Form = (props) => {
     function addingIngredient(ingredient) {
         const ingredientData = ingredient.get('ingredient')
-        console.log("in form")
-        console.log(ingredientData)
         ingredientData ? props.addIngredient(ingredientData) : console.log('Enter a value to add ingredient.')
     }
     return (
