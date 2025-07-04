@@ -1,7 +1,7 @@
 
 export default function Recipe() {
     return (
-        <section id="spicy-herb-chicken">
+        <section class="recipe-section">
             <h2>Spicy Herb Chicken with Tomato Glaze</h2>
 
             <h3>Ingredients:</h3>
