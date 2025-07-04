@@ -7,6 +7,7 @@ import Form from './components/Form'
 import IngredientList from './components/IngredientList'
 import ReadyForRecipe from './components/ReadyForRecipe'
 import Recipe from './components/Recipe'
+import { getRecipeFromMistral } from './ai'
 
 function App() {
   const [ingredients, setIngredients] = React.useState(['chilli', 'pepper', 'oregano', 'chicken', 'tamato'])
