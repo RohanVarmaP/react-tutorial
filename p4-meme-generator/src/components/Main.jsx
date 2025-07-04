@@ -12,18 +12,28 @@ export default function Main() {
     useEffect(() => {
         fetch('http://api.imgflip.com/get_memes')
             .then(res => res.json())
-            .then(data => console.log(data.data.memes))
-    }, [meme])
+            .then(data => {
+                setAllMemes(data.data.memes)
+            })
+    }, [])
 
     function handleChange(event) {
+        console.log(allMemes)
         const name = event.currentTarget.name
         const value = event.currentTarget.value
         setMeme(prev => ({ ...prev, [name]: value }))
-        console.log(meme)
     }
+
+    function getImage() {
+        const randomNum = Math.floor(Math.random() * allMemes.length)
+        const newMeme = allMemes[randomNum].url
+        console.log(newMeme)
+        setMeme(prev => ({ ...prev, imageURL: newMeme }))
+    }
+
     return (
         <main className="main">
-            <form className="form">
+            <div className="form">
                 <label>Top Text
                     <input
                         type="text"
@@ -41,8 +51,8 @@ export default function Main() {
                         onChange={handleChange}
                     />
                 </label>
-                <button>Get a new meme image 🖼</button>
-            </form>
+                <button onClick={getImage}>Get a new meme image 🖼</button>
+            </div>
             <div className="meme">
                 <img src={meme.imageURL} alt="generated Meme" />
                 <span className="top">{meme.topText}</span>
