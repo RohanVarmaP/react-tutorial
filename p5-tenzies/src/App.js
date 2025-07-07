@@ -5,11 +5,11 @@ import { nanoid } from 'nanoid';
 
 function App() {
 
-  const [dice, setDice] = useState(GetRandom())
+  const [dice, setDice] = useState(getRandom())
 
   const gameWon = dice.every(die => die.isHeld) && dice.every(die => die.value === dice[0].value)
 
-  function GetRandom() {
+  function getRandom() {
     const randomList = [];
     for (let i = 0; i < 10; i++) {
       const randomValue = Math.floor(Math.random() * 6) + 1
@@ -29,9 +29,13 @@ function App() {
     hold={() => hold(val.id)} />)
 
   function rollDice() {
-    setDice(old => (old.map(val => (val.isHeld === true ? val : { ...val, value: Math.floor(Math.random() * 6) + 1 }
-    ))
-    ))
+    if (gameWon) {
+      setDice(getRandom())
+    } else {
+      setDice(old => (old.map(val => (val.isHeld === true ? val : { ...val, value: Math.floor(Math.random() * 6) + 1 }
+      ))
+      ))
+    }
   }
 
   function hold(key) {
@@ -44,6 +48,9 @@ function App() {
 
   return (
     <main>
+      <div aria-live='polite' className='sr-only'>
+        {gameWon && <p>You Won!. Press new game to start a new game.</p>}
+      </div>
       <h1>Tenzies</h1>
       <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
       <section className='die-section'>
