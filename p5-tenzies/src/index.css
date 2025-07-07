@@ -85,3 +85,12 @@ main>p {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
 }
+
+.roll-dice:hover,
+.roll-dice:focus {
+  outline: none;
+  box-shadow: 0 0 15px 4px rgba(80, 53, 255, 0.7);
+  /* glowing purple */
+  transform: scale(1.03);
+  /* slight pop on interaction */
+}

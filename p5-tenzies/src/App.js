@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './App.css';
 import Die from './components/Die';
 import { nanoid } from 'nanoid';
@@ -7,7 +7,17 @@ function App() {
 
   const [dice, setDice] = useState(getRandom())
 
+  const buttonRef = useRef(null)
+  console.log(buttonRef)
+
   const gameWon = dice.every(die => die.isHeld) && dice.every(die => die.value === dice[0].value)
+
+  useEffect(() => {
+    if (gameWon) {
+      buttonRef.current.focus()
+      buttonRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }, [gameWon])
 
   function getRandom() {
     const randomList = [];
@@ -19,7 +29,6 @@ function App() {
         id: nanoid()
       })
     }
-    console.log(randomList)
     return randomList
   }
 
@@ -56,7 +65,7 @@ function App() {
       <section className='die-section'>
         {diceElement}
       </section>
-      <button className='roll-dice' onClick={rollDice}>{gameWon ? 'New Game' : 'Roll Dice'}</button>
+      <button ref={buttonRef} className='roll-dice' onClick={rollDice}>{gameWon ? 'New Game' : 'Roll Dice'}</button>
     </main>
   );
 }
