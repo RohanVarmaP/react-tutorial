@@ -18,11 +18,16 @@ function App() {
 
   const diceElement = dice.map((val) => <Die value={val} />)
 
+  function rollDice() {
+    setDice(GetRandom())
+  }
+
   return (
     <main>
       <section className='die-section'>
         {diceElement}
       </section>
+      <button className='roll-dice' onClick={rollDice}>Roll</button>
     </main>
   );
 }
