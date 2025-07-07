@@ -3,7 +3,19 @@ import { languages } from '../data/languages'
 
 const Language = () => {
     function getLanguages(languages) {
-        languages.map((val) => (<span>val.name</span>))
+        const languageElement = languages.map((val) => {
+            const styles = {
+                backgroundColor: val.backgroundColor,
+                color: val.color
+            }
+            return <span
+                className='chip'
+                key={val.name}
+                style={styles}>
+                {val.name}
+            </span>
+        })
+        return languageElement
     }
     return (
         <section className='languge-section'>

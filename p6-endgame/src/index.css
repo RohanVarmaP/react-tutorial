@@ -52,3 +52,17 @@ header>p {
   margin-bottom: 0px;
 
 }
+
+.languge-section {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 350px;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.chip {
+  padding: 5px;
+  border-radius: 3px;
+}
