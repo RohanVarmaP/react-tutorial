@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Status from './components/Status';
 import Language from './components/Language';
 import Word from './components/Word';
+import Keyboard from './components/Keyboard';
 
 function App() {
 
@@ -16,6 +17,8 @@ function App() {
       <Status />
       <Language />
       <Word currentWord={currentWord} />
+      <Keyboard />
+      <button>New Game</button>
     </>
   );
 }

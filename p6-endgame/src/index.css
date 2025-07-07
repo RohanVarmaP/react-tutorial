@@ -86,3 +86,41 @@ header>p {
   font-size: 18px;
   font-weight: bold;
 }
+
+.keyboard-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  align-items: center;
+  height: 160px;
+  width: 480px;
+  gap: 6px;
+}
+
+.keyboard-section>span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  background-color: #FCBA29;
+  color: black;
+  border-radius: 4px;
+  border: 1px solid white;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+button {
+  height: 40px;
+  width: 250px;
+  border-radius: 4px;
+  padding: 6px 12px;
+  background-color: #11B5E5;
+  color: black;
+  border: 1px solid #D7D7D7;
+  gap: 6px;
+  font-family: Hanken Grotesk;
+  font-weight: 600;
+  font-size: 18px;
+}
