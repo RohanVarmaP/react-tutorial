@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0px;
+  padding: 0px;
+  background-color: #0B2434;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: 10px;
+  height: 80%;
+  width: 80%;
+}
