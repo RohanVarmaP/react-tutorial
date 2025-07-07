@@ -23,4 +23,6 @@ main {
   border-radius: 10px;
   height: 80%;
   width: 80%;
+  max-width: 500px;
+  max-height: 500px;
 }
