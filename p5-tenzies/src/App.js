@@ -13,7 +13,7 @@ function App() {
       const randomValue = Math.floor(Math.random() * 6) + 1
       randomList.push({
         value: randomValue,
-        isHeld: true,
+        isHeld: false,
         id: nanoid()
       })
     }
@@ -21,10 +21,21 @@ function App() {
     return randomList
   }
 
-  const diceElement = dice.map((val) => <Die key={val.id} {...val} />)
+  const diceElement = dice.map((val) => <Die
+    key={val.id}
+    {...val}
+    hold={() => hold(val.id)} />)
 
   function rollDice() {
     setDice(GetRandom())
+  }
+
+  function hold(key) {
+    setDice(old => {
+      return old.map(val => {
+        return val.id === key ? { ...val, isHeld: !val.isHeld } : val
+      })
+    })
   }
 
   return (
