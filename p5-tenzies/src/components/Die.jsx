@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Die = () => {
+const Die = (props) => {
     return (
-        <button>1</button>
+        <button>{props.value}</button>
     )
 }
 

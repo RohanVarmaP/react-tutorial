@@ -1,10 +1,12 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 import Die from './components/Die';
 
 function App() {
 
-  function Getrandom() {
+  const [dice, setDice] = useState(GetRandom())
+
+  function GetRandom() {
     const randomList = [];
     for (let i = 0; i < 10; i++) {
       const randomValue = Math.floor(Math.random() * 6) + 1
@@ -14,24 +16,12 @@ function App() {
     return randomList
   }
 
+  const diceElement = dice.map((val) => <Die value={val} />)
+
   return (
     <main>
       <section className='die-section'>
-        {
-          Getrandom(randomList).map((val) => {
-            <Die value={val} />
-          })
-        }
-        <Die />
-        <Die />
-        <Die />
-        <Die />
-        <Die />
-        <Die />
-        <Die />
-        <Die />
-        <Die />
-        <Die />
+        {diceElement}
       </section>
     </main>
   );
