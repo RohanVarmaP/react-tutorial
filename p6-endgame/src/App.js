@@ -35,7 +35,7 @@ function App() {
       <Language wrongGuessCount={wrongGuessCount} />
       <Word currentWord={currentWord} letterGuessed={letterGuessed} isGameOver={isGameOver} />
       <Keyboard onLetterClick={handleLetterClick} letterGuessed={letterGuessed} currentWord={currentWord} isGameOver={isGameOver} />
-      <button>New Game</button>
+      {isGameOver ? <button onClick={() => window.location.reload()}>New Game</button> : null}
     </>
   );
 }
