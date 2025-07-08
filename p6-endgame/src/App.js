@@ -10,16 +10,16 @@ function App() {
 
   const [currentWord, setCurrentWord] = React.useState('react')
   const [letterGuessed, setLetterGuessed] = React.useState([])
-  console.log('currentWord', currentWord);
-  console.log('letterGuessed', letterGuessed);
+  // console.log('currentWord', currentWord);
+  // console.log('letterGuessed', letterGuessed);
 
   const wrongGuessCount = letterGuessed.filter((value) => !currentWord.includes(value)).length
-  console.log(wrongGuessCount)
+  // console.log(wrongGuessCount)
 
   const isgameWon = currentWord.split('').every((letter) => letterGuessed.includes(letter))
-  console.log('isgameWon', isgameWon)
+  // console.log('isgameWon', isgameWon)
   const isgameLost = wrongGuessCount >= 9
-  console.log('isgameLost', isgameLost)
+  // console.log('isgameLost', isgameLost)
 
   function handleLetterClick(letter) {
     setLetterGuessed(prev => (letter && !prev.includes(letter)) ? [...prev, letter] : prev);
@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <Header />
-      <Status isgameLost={isgameLost} isgameWon={isgameWon} />
+      <Status isgameLost={isgameLost} isgameWon={isgameWon} wrongGuessCount={wrongGuessCount} />
       <Language wrongGuessCount={wrongGuessCount} />
       <Word currentWord={currentWord} letterGuessed={letterGuessed} />
       <Keyboard onLetterClick={handleLetterClick} letterGuessed={letterGuessed} currentWord={currentWord} />
