@@ -124,3 +124,11 @@ button {
   font-weight: 600;
   font-size: 18px;
 }
+
+.keyboard-section>.correct {
+  background-color: #10A95B;
+}
+
+.keyboard-section>.wrong {
+  background-color: #EC5D49;
+}
