@@ -13,6 +13,9 @@ function App() {
   console.log('currentWord', currentWord);
   console.log('letterGuessed', letterGuessed);
 
+  const wrongGuessCount = letterGuessed.filter((value) => !currentWord.includes(value)).length
+  console.log(wrongGuessCount)
+
   function handleLetterClick(letter) {
     setLetterGuessed(prev => (letter && !prev.includes(letter)) ? [...prev, letter] : prev);
   }
@@ -21,7 +24,7 @@ function App() {
     <>
       <Header />
       <Status />
-      <Language />
+      <Language wrongGuessCount={wrongGuessCount} />
       <Word currentWord={currentWord} letterGuessed={letterGuessed} />
       <Keyboard onLetterClick={handleLetterClick} letterGuessed={letterGuessed} currentWord={currentWord} />
       <button>New Game</button>
