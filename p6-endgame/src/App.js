@@ -22,7 +22,7 @@ function App() {
       <Header />
       <Status />
       <Language />
-      <Word currentWord={currentWord} />
+      <Word currentWord={currentWord} letterGuessed={letterGuessed} />
       <Keyboard onLetterClick={handleLetterClick} letterGuessed={letterGuessed} currentWord={currentWord} />
       <button>New Game</button>
     </>

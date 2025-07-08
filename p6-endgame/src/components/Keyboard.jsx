@@ -1,6 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 
+
 const Keyboard = (props) => {
     const alphabetElement = 'abcdefghijklmnopqrstuvwxyz'.split('').map((letter, index) => {
         const isGuessed = props.letterGuessed.includes(letter)
