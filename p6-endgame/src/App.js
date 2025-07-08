@@ -9,7 +9,13 @@ import Keyboard from './components/Keyboard';
 function App() {
 
   const [currentWord, setCurrentWord] = React.useState('react')
+  const [letterGuessed, setLetterGuessed] = React.useState([])
+  console.log('currentWord', currentWord);
+  console.log('letterGuessed', letterGuessed);
 
+  function handleLetterClick(letter) {
+    setLetterGuessed(prev => (letter && !prev.includes(letter)) ? [...prev, letter] : prev);
+  }
 
   return (
     <>
@@ -17,7 +23,7 @@ function App() {
       <Status />
       <Language />
       <Word currentWord={currentWord} />
-      <Keyboard />
+      <Keyboard onLetterClick={handleLetterClick} />
       <button>New Game</button>
     </>
   );
