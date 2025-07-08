@@ -16,6 +16,9 @@ const Keyboard = (props) => {
                 key={index}
                 onClick={() => props.onLetterClick(letter)}
                 className={className}
+                disabled={props.isGameOver}
+                aria-label={`Letter: ${letter}`}
+                aria-disabled={props.isGameOver}
             >
                 {letter.toUpperCase()}
             </button>)

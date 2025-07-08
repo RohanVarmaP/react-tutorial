@@ -45,6 +45,8 @@ const Status = (props) => {
     return (
         <section
             className='status-section'
+            role='status'
+            aria-live='polite'
             style={{
                 backgroundColor: props.isgameLost
                     ? '#BA2A2A'

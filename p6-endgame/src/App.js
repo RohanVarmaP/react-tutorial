@@ -20,6 +20,8 @@ function App() {
   // console.log('isgameWon', isgameWon)
   const isgameLost = wrongGuessCount >= 9
   // console.log('isgameLost', isgameLost)
+  const isGameOver = isgameLost || isgameWon
+  console.log('isgameover', isGameOver)
 
   function handleLetterClick(letter) {
     setLetterGuessed(prev => (letter && !prev.includes(letter)) ? [...prev, letter] : prev);
@@ -31,7 +33,7 @@ function App() {
       <Status isgameLost={isgameLost} isgameWon={isgameWon} wrongGuessCount={wrongGuessCount} />
       <Language wrongGuessCount={wrongGuessCount} />
       <Word currentWord={currentWord} letterGuessed={letterGuessed} />
-      <Keyboard onLetterClick={handleLetterClick} letterGuessed={letterGuessed} currentWord={currentWord} />
+      <Keyboard onLetterClick={handleLetterClick} letterGuessed={letterGuessed} currentWord={currentWord} isGameOver={isGameOver} />
       <button>New Game</button>
     </>
   );
