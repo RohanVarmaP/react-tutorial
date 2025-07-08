@@ -9,7 +9,7 @@ const Language = () => {
                 color: val.color
             }
             return <span
-                className='chip'
+                className='chip lost'
                 key={val.name}
                 style={styles}>
                 {val.name}
