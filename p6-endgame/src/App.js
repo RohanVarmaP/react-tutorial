@@ -5,10 +5,11 @@ import Status from './components/Status';
 import Language from './components/Language';
 import Word from './components/Word';
 import Keyboard from './components/Keyboard';
+import { words } from './data/Words';
 
 function App() {
 
-  const [currentWord, setCurrentWord] = React.useState('react')
+  const [currentWord, setCurrentWord] = React.useState(Math.floor(Math.random() * words.length) >= 0 ? words[Math.floor(Math.random() * words.length)] : 'javascript');
   const [letterGuessed, setLetterGuessed] = React.useState([])
   // console.log('currentWord', currentWord);
   // console.log('letterGuessed', letterGuessed);
@@ -32,7 +33,7 @@ function App() {
       <Header />
       <Status isgameLost={isgameLost} isgameWon={isgameWon} wrongGuessCount={wrongGuessCount} />
       <Language wrongGuessCount={wrongGuessCount} />
-      <Word currentWord={currentWord} letterGuessed={letterGuessed} />
+      <Word currentWord={currentWord} letterGuessed={letterGuessed} isGameOver={isGameOver} />
       <Keyboard onLetterClick={handleLetterClick} letterGuessed={letterGuessed} currentWord={currentWord} isGameOver={isGameOver} />
       <button>New Game</button>
     </>
